@@ -28,9 +28,9 @@ class DeveloperUser(StatesGroup):
 
 
 async def find_work(message : types.Message):
+    global costumer_users_offer
+    costumer_users_offer[message.from_user.id] = 0
     if await check_profile(message.from_user.id):
-        global costumer_users_offer
-        costumer_users_offer[message.from_user.id] = 0
         user_index = costumer_users_offer[message.from_user.id]
         customers = await urders_of_users(int(message.from_user.id))
         if customers:
