@@ -1,0 +1,5 @@
+config.py
+venv
+__pycache__
+sql_commands/__pycache__
+test.py
